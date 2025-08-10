@@ -1,0 +1,165 @@
+{
+  "entrance": {
+    "front": [
+      "fresh produce",
+      "smoothies"
+    ]
+  },
+  "meatcase": {
+    "back": [
+      "fresh meats"
+    ]
+  },
+  "refridgerated": {
+    "back": [
+      "dairy",
+      "eggs",
+      "yogurt",
+      "cheeses"
+    ]
+  },
+  "frozen": {
+    "back": [
+      "frozen produce",
+      "frozen meats",
+      "frozen meals",
+      "frozen foods",
+      "ice cream"
+    ]
+  },
+  "two": {
+    "back": [
+      "beans/broth",
+      "can beans",
+      "can tomatoes",
+      "can vegetables",
+      "chili/stew",
+      "soup"
+    ],
+    "front": [
+      "asian foods",
+      "hispanic foods",
+      "pastas",
+      "olive oil",
+      "pasta",
+      "tortillas"
+    ]
+  },
+  "three": {
+    "back": [
+      "bbq sauce",
+      "condiments",
+      "mayo",
+      "olives",
+      "pickles",
+      "salad dressing"
+    ],
+    "front": [
+      "applesauce",
+      "can fruit",
+      "ramen",
+      "rice",
+      "tuna"
+    ]
+  },
+  "four": {
+    "back": [
+      "bread",
+      "buns",
+      "fruit snacks",
+      "granola bars",
+      "peanut butter & jelly"
+    ],
+    "front": [
+      "baking ingredients",
+      "breadings",
+      "cooking oils",
+      "flour",
+      "marshmallows",
+      "sugar"
+    ]
+  },
+  "five": {
+    "front": [
+      "bags/foil",
+      "coffee",
+      "foil pans",
+      "hot tea",
+      "k cups",
+      "plates/cups/bowls",
+      "cereal",
+      "granola",
+      "pancake mix",
+      "pop tarts"
+    ]
+  },
+  "six": {
+    "back": [
+      "chips",
+      "kettle chips",
+      "old dutch",
+      "pretzels",
+      "snack mix",
+      "takis"
+    ],
+    "front": [
+      "cookies",
+      "graham crackers",
+      "pack snacks",
+      "snack cakes",
+      "crackers"
+    ]
+  },
+  "seven": {
+    "back": [
+      "water",
+      "flavored water"
+    ],
+    "front": [
+      "bottled tea",
+      "meat jerky",
+      "popcorn",
+      "nuts",
+      "sports drinks"
+    ]
+  },
+  "eight": {
+    "back": [
+      "air fresheners",
+      "bottled juice",
+      "facial tissues",
+      "home office",
+      "lightning",
+      "tomato juice"
+    ],
+    "front": [
+      "soda",
+      "energy drinks"
+    ]
+  },
+  "nine": {
+    "back": [
+      "cleaning supplies"
+    ],
+    "front": [
+      "bleach",
+      "laundry",
+      "gift cards",
+      "hallmark cards"
+    ]
+  },
+  "ten": {
+    "back": [
+      "pet food",
+      "pet toys"
+    ]
+  },
+  "eleven": {
+    "back": [
+      "baby food",
+      "baby toys",
+      "diapers",
+      "training pants"
+    ]
+  }
+}
