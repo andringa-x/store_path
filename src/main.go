@@ -24,6 +24,17 @@ type Aisles struct{
 func main() {
 	list := "bananas, oranges, salad, frozen pizza, pizza rolls, ice cream, butter, cottage cheese, salt, garlic powder, bread, eggs, soy sauce,  marinara"
 	
+	aisles, aisleMap := jsonMapToAisles("aisles.json")
+	path := pathBuilder()
+
+	query := queryBuilder(aisles, aisleMap, path, list)
+
+
+	fmt.Println(query)
+	//geminiCall(query)
+}
+
+func jsonMapToAisles(file_name string) (Aisles , map[string]int) {
 	jsonFile, err := os.Open("aisles.json")
 	if err != nil {
 		log.Fatal(err)
@@ -38,8 +49,12 @@ func main() {
 
 	for index, value := range aisles.Aisles {
 		aisleMap[value.Name] = index
-	}	
+	}
 
+	return aisles, aisleMap
+}
+
+func pathBuilder () []string {
 	var path []string
 	path = append(path, "produce")
 	path = append(path, "two_front")
@@ -62,7 +77,11 @@ func main() {
 	path = append(path, "eight_back")
 	path = append(path, "nine_back")
 
-	query := "Please sort this the following grocery list by order of "
+	return path
+}
+
+func queryBuilder(aisles Aisles, aisleMap map[string]int, path []string, list string) string {
+	query := "Sort the following grocery list by order of "
 	
 	for index, value := range path {
 		if(index != 0){
@@ -75,7 +94,7 @@ func main() {
 	query += list
 	query += ". Just give a list do not show the categories."
 
-	geminiCall(query)
+	return query
 }
 
 func geminiCall(query string) {
