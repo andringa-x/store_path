@@ -1,21 +1,21 @@
 {
   "aisles": [
     {
-      "name": "entrance",
-      "front": [
+      "name": "produce",
+      "items": [
         "fresh produce",
         "smoothies"
       ]
     },
     {
       "name": "meatcase",
-      "back": [
+      "items": [
         "fresh meats"
       ]
     },
     {
       "name": "refridgerated",
-      "back": [
+      "items": [
         "dairy",
         "eggs",
         "yogurt",
@@ -24,7 +24,7 @@
     },
     {
       "name": "frozen",
-      "back": [
+      "items": [
         "frozen produce",
         "frozen meats",
         "frozen meals",
@@ -33,35 +33,41 @@
       ]
     },
     {
-      "name": "two",
-      "back": [
+      "name": "two_back",
+      "items": [
         "beans/broth",
         "can beans",
         "can tomatoes",
         "can vegetables",
         "chili/stew",
         "soup"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "two_front",
+      "items": [
         "asian foods",
         "hispanic foods",
+	"italian foods",
         "pastas",
         "olive oil",
-        "pasta",
         "tortillas"
       ]
     },
     {
-      "name": "three",
-      "back": [
+      "name": "three_back",
+      "items": [
         "bbq sauce",
         "condiments",
         "mayo",
         "olives",
         "pickles",
         "salad dressing"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "three_front",
+      "items": [
         "applesauce",
         "can fruit",
         "ramen",
@@ -70,16 +76,20 @@
       ]
     },
     {
-      "name": "four",
-      "back": [
+      "name": "four_back",
+      "items": [
         "bread",
         "buns",
         "fruit snacks",
         "granola bars",
         "peanut butter & jelly"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "four_front",
+      "items": [
         "baking ingredients",
+	"spices",
         "breadings",
         "cooking oils",
         "flour",
@@ -88,8 +98,8 @@
       ]
     },
     {
-      "name": "five",
-      "front": [
+      "name": "five_front",
+      "items": [
         "bags/foil",
         "coffee",
         "foil pans",
@@ -103,16 +113,19 @@
       ]
     },
     {
-      "name": "six",
-      "back": [
+      "name": "six_back",
+      "items": [
         "chips",
         "kettle chips",
         "old dutch",
         "pretzels",
         "snack mix",
         "takis"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "six_front",
+      "items": [
         "cookies",
         "graham crackers",
         "pack snacks",
@@ -121,12 +134,15 @@
       ]
     },
     {
-      "name": "seven",
-      "back": [
+      "name": "seven_back",
+      "items": [
         "water",
         "flavored water"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "seven_front",
+      "items": [
         "bottled tea",
         "meat jerky",
         "popcorn",
@@ -135,26 +151,32 @@
       ]
     },
     {
-      "name": "eight",
-      "back": [
+      "name": "eight_back",
+      "items": [
         "air fresheners",
         "bottled juice",
         "facial tissues",
         "home office",
         "lightning",
         "tomato juice"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "eight_front",
+      "items": [
         "soda",
         "energy drinks"
       ]
     },
     {
-      "name": "nine",
-      "back": [
+      "name": "nine_back",
+      "items": [
         "cleaning supplies"
-      ],
-      "front": [
+      ]
+    },
+    {
+      "name": "nine_front",
+      "items": [
         "bleach",
         "laundry",
         "gift cards",
@@ -162,15 +184,15 @@
       ]
     },
     {
-      "name": "ten",
-      "back": [
+      "name": "ten_back",
+      "items": [
         "pet food",
         "pet toys"
       ]
     },
     {
-      "name": "eleven",
-      "back": [
+      "name": "eleven_back",
+      "items": [
         "baby food",
         "baby toys",
         "diapers",
