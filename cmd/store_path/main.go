@@ -2,45 +2,57 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
-	"log"
+	"github.com/andringa-x/store_path/internal/handlers"
+	"github.com/go-chi/chi"
+	log "github.com/sirupsen/logrus"
 	"google.golang.org/genai"
-	"encoding/json"	
+	"io"
+	"net/http"
 	"os"
-	"io/ioutil"
 	"strings"
 )
 
 type Aisle struct {
-	Name string `json:"name"`
+	Name  string   `json:"name"`
 	Items []string `json:"items"`
 }
 
-
-type Aisles struct{
+type Aisles struct {
 	Aisles []Aisle `json:"aisles"`
 }
 
 func main() {
-	list := "bananas, oranges, salad, frozen pizza, pizza rolls, ice cream, butter, cottage cheese, salt, garlic powder, bread, eggs, soy sauce,  marinara"
-	
-	aisles, aisleMap := jsonMapToAisles("aisles.json")
-	path := pathBuilder()
+	log.SetReportCaller(true)
+	var r *chi.Mux = chi.NewRouter()
+	handlers.Handler(r)
 
-	query := queryBuilder(aisles, aisleMap, path, list)
+	fmt.Println("Starting Go API Service")
 
+	err := http.ListenAndServe("localhost:8000", r)
+	if err != nil {
+		log.Error(err)
+	}
 
-	fmt.Println(query)
-	//geminiCall(query)
+	//list := "bananas, oranges, salad, frozen pizza, pizza rolls, ice cream, butter, cottage cheese, salt, garlic powder, bread, eggs, soy sauce,  marinara"
+	//
+	//aisles, aisleMap := jsonMapToAisles("aisles.json")
+	//path := pathBuilder()
+
+	//query := queryBuilder(aisles, aisleMap, path, list)
+
+	//fmt.Println(query)
+	////geminiCall(query)
 }
 
-func jsonMapToAisles(file_name string) (Aisles , map[string]int) {
+func jsonMapToAisles(file_name string) (Aisles, map[string]int) {
 	jsonFile, err := os.Open("aisles.json")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	byteValue, _ := ioutil.ReadAll(jsonFile)
+	byteValue, _ := io.ReadAll(jsonFile)
 
 	var aisles Aisles
 	aisleMap := make(map[string]int)
@@ -54,7 +66,7 @@ func jsonMapToAisles(file_name string) (Aisles , map[string]int) {
 	return aisles, aisleMap
 }
 
-func pathBuilder () []string {
+func pathBuilder() []string {
 	var path []string
 	path = append(path, "produce")
 	path = append(path, "two_front")
@@ -82,15 +94,15 @@ func pathBuilder () []string {
 
 func queryBuilder(aisles Aisles, aisleMap map[string]int, path []string, list string) string {
 	query := "Sort the following grocery list by order of "
-	
+
 	for index, value := range path {
-		if(index != 0){
+		if index != 0 {
 			query += " then "
 		}
 		query += strings.Join(aisles.Aisles[aisleMap[value]].Items, ", ")
 	}
 
-	query += " : " 
+	query += " : "
 	query += list
 	query += ". Just give a list do not show the categories."
 
@@ -98,21 +110,21 @@ func queryBuilder(aisles Aisles, aisleMap map[string]int, path []string, list st
 }
 
 func geminiCall(query string) {
-    ctx := context.Background()
-    client, err := genai.NewClient(ctx, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
+	ctx := context.Background()
+	client, err := genai.NewClient(ctx, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    result, err := client.Models.GenerateContent(
-        ctx,
-        "gemini-2.5-flash",
-        genai.Text(query),
-        nil,
-    )
-    if err != nil {
-        log.Fatal(err)
-    }
+	result, err := client.Models.GenerateContent(
+		ctx,
+		"gemini-2.5-flash",
+		genai.Text(query),
+		nil,
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    fmt.Println(result.Text())
+	fmt.Println(result.Text())
 }
