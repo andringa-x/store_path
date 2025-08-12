@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/alexand-x/store_path/internal/middleware"
+	"github.com/andringa-x/store_path/internal/middleware"
 	"github.com/go-chi/chi"
 	chimiddle "github.com/go-chi/chi/middleware"
 )
