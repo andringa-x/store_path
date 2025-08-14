@@ -1,9 +1,10 @@
-module store_path/src
+module github.com/andringa-x/store_path
 
 go 1.24.6
 
 require (
 	github.com/go-chi/chi v1.5.5
+	github.com/gorilla/schema v1.2.0
 	github.com/sirupsen/logrus v1.9.3
 	google.golang.org/genai v1.19.0
 )
@@ -16,7 +17,6 @@ require (
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/s2a-go v0.1.8 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.4 // indirect
-	github.com/gorilla/schema v1.2.0 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/crypto v0.27.0 // indirect

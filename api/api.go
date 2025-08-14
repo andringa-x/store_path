@@ -5,28 +5,15 @@ import (
 	"net/http"
 )
 
-type CoinBalanceParams struct {
-	Username string
+type StorePathBody struct {
+	Path []string `json:"path"`
+	List string   `json:"list"`
 }
 
-// Coin Balance Response
-type CoinBalanceResponse struct {
-	// Success Code, Usually 200
+type StorePathReponse struct {
 	Code int
-
-	// Account Balance
-	Balance int64
+	List string
 }
-
-//type StorePathParams struct {
-//	Order []string
-//	List  string
-//}
-//
-//type StorePathReponse struct {
-//	Code int
-//	List string
-//}
 
 type Error struct {
 	Code    int
@@ -51,6 +38,10 @@ var (
 	}
 
 	InternalErrorHandler = func(w http.ResponseWriter) {
-		writeError(w, "An Unexpected Error Occurred.", http.StatusInternalServerError)
+		writeError(w, "An unexpected error occurred.", http.StatusInternalServerError)
+	}
+
+	GeminiErrorHandler = func(w http.ResponseWriter) {
+		writeError(w, "An error occurred while contacting Gemini.", http.StatusInternalServerError)
 	}
 )
