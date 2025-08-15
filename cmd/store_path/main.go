@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Println("Starting Go API Service")
 
-	err := http.ListenAndServe("localhost:8000", r)
+	err := http.ListenAndServe(":8000", r)
 	if err != nil {
 		log.Error(err)
 	}
